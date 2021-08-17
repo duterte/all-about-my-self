@@ -1,16 +1,16 @@
-import React, { FC, useState, useCallback, ReactElement } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { ParallaxLayer } from "@react-spring/parallax";
-import Container from "@material-ui/core/Container";
+import React, { FC, useState, useCallback, ReactElement } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { ParallaxLayer } from '@react-spring/parallax';
+import Container from '@material-ui/core/Container';
 
 const useStyle = makeStyles({
   box: {
-    margin: "0 auto",
-    padding: "4em 0",
+    margin: '0 auto',
+    padding: '4em 0',
     maxWidth: 1000,
   },
   bg: {
-    backgroundColor: "orange",
+    backgroundColor: 'orange',
   },
 });
 
@@ -21,7 +21,7 @@ type Props = {
 };
 
 const ParallaxBox: FC<Props> = ({ children, speed, offset }): ReactElement => {
-  const [height, setHeight] = useState<string | number>("");
+  const [height, setHeight] = useState<string | number>('');
   const classes = useStyle();
 
   const intro = useCallback((node) => {
@@ -41,7 +41,7 @@ const ParallaxBox: FC<Props> = ({ children, speed, offset }): ReactElement => {
       <ParallaxLayer
         offset={offset}
         speed={speed}
-        style={{ transform: "none" }}
+        style={{ transform: 'none' }}
       >
         <Container className={classes.box} ref={intro}>
           {children}

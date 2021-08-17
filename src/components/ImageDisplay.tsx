@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import ImageList from "@material-ui/core/ImageList";
-import ImageListItem from "@material-ui/core/ImageListItem";
+import React, { FC } from 'react';
+import ImageList from '@material-ui/core/ImageList';
+import ImageListItem from '@material-ui/core/ImageListItem';
 
 export type Images = {
   alt: string;

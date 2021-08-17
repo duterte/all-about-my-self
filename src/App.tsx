@@ -1,69 +1,70 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from 'react';
 import {
   ThemeProvider,
   createTheme,
   makeStyles,
-} from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
-import Paper from "@material-ui/core/Paper";
+} from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
 
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import axios from "axios";
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
+import axios from 'axios';
 
-import ParallaxBox from "./components/ParalaxBox";
-import Header from "./components/Header";
-import ImageWindows, { Images } from "./components/ImageDisplay";
-import ImageSlides from "./components/ImageSlides";
+import ParallaxBox from './components/ParalaxBox';
+import Header from './components/Header';
+import ImageWindows, { Images } from './components/ImageDisplay';
+import ImageSlides from './components/ImageSlides';
 
 const theme = createTheme({
   palette: {
     primary: {
-      light: "#3ba2f5",
-      main: "#2196f3",
-      dark: "#0d8df3",
-      contrastText: "#fff",
+      light: '#3ba2f5',
+      main: '#2196f3',
+      dark: '#0d8df3',
+      contrastText: '#fff',
     },
   },
 });
 
 const useStyle = makeStyles({
   socialIcons: {
-    display: "flex",
-    justifyContent: "flex-end",
+    display: 'flex',
+    justifyContent: 'flex-end',
   },
   p: {
-    marginTop: "3em",
+    marginTop: '3em',
   },
   left: {
-    width: "46%",
-    padding: "2em",
-    position: "absolute",
+    width: '46%',
+    padding: '2em',
+    position: 'absolute',
     left: 0,
   },
   right: {
-    width: "50%",
-    position: "absolute",
-    padding: "1em",
+    width: '50%',
+    position: 'absolute',
+    padding: '1em',
     right: 0,
   },
   box: {
-    margin: "0 auto",
-    padding: "4em 0",
+    margin: '0 auto',
+    padding: '4em 0',
     maxWidth: 1000,
-    position: "relative",
+    position: 'relative',
   },
   imageSlide: {
-    padding: "2em",
+    padding: '2em',
   },
   parallaxBG: {
     backgroundImage: 'url("/img/space.jpg")',
-    backgroundPosition: "center center",
+    backgroundPosition: 'center center',
     // backgroundRepeat: ""
   },
 });
 
 type photoAttr = {
+  // eslint-disable-next-line camelcase
   alt_description: string;
   urls: {
     regular: string;
@@ -75,9 +76,9 @@ const App: FC = () => {
   const classes = useStyle();
 
   useEffect(() => {
-    const param = "&orientation=landscape&page=2&query=london";
-    const publicKey = "client_id=8Eu3e4wPfPgoAVDYERpUC1EwCa7e5jfL8NaY7b-mpAM";
-    const endpoint = "https://api.unsplash.com/search/photos?";
+    const param = '&orientation=landscape&page=2&query=london';
+    const publicKey = 'client_id=8Eu3e4wPfPgoAVDYERpUC1EwCa7e5jfL8NaY7b-mpAM';
+    const endpoint = 'https://api.unsplash.com/search/photos?';
     const url = endpoint + publicKey + param;
     axios(url)
       .then((res) => {

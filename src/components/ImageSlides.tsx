@@ -1,8 +1,8 @@
-import React, { FC, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { wrap } from "popmotion";
-import { makeStyles } from "@material-ui/styles";
-import { Typography } from "@material-ui/core";
+import React, { FC, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { wrap } from 'popmotion';
+import { makeStyles } from '@material-ui/styles';
+import { Typography } from '@material-ui/core';
 
 const variants = {
   enter: (direction: number) => {
@@ -48,51 +48,51 @@ type DragProperties = {
 
 const useStyle = makeStyles({
   container: {
-    position: "relative",
-    backgroundColor: "#333",
+    position: 'relative',
+    backgroundColor: '#333',
   },
   next: {
     right: 10,
-    position: "absolute",
-    bottom: "50%",
-    backgroundColor: "white",
+    position: 'absolute',
+    bottom: '50%',
+    backgroundColor: 'white',
     borderRadius: 30,
     width: 40,
     height: 40,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    userSelect: "none",
-    pointerEvents: "all",
-    cursor: "pointer",
-    fontWeight: "bold",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    userSelect: 'none',
+    pointerEvents: 'all',
+    cursor: 'pointer',
+    fontWeight: 'bold',
     fontSize: 12,
     zIndex: 2,
-    padding: "1em",
+    padding: '1em',
   },
   prev: {
     left: 10,
-    position: "absolute",
-    bottom: "50%",
-    backgroundColor: "white",
+    position: 'absolute',
+    bottom: '50%',
+    backgroundColor: 'white',
     borderRadius: 30,
     width: 40,
     height: 40,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    userSelect: "none",
-    pointerEvents: "all",
-    cursor: "pointer",
-    fontWeight: "bold",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    userSelect: 'none',
+    pointerEvents: 'all',
+    cursor: 'pointer',
+    fontWeight: 'bold',
     fontSize: 12,
     zIndex: 2,
-    padding: "1em",
+    padding: '1em',
   },
   img: {
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
   },
 });
 
@@ -134,7 +134,7 @@ const ImageSlides: FC<Props> = ({ images }) => {
             exit="exit"
             transition={{
               x: {
-                type: "spring",
+                type: 'spring',
                 stiffness: 300,
                 damping: 30,
               },
@@ -154,7 +154,7 @@ const ImageSlides: FC<Props> = ({ images }) => {
         <div
           className={classes.next}
           onClick={() => {
-            console.log("next");
+            console.log('next');
             paginate(1);
           }}
         >

@@ -4,61 +4,61 @@
 //   return <h1>Login</h1>;
 // };
 
-import React, { FC, SyntheticEvent, useState, ChangeEvent } from "react";
+import React, { FC, SyntheticEvent, useState, ChangeEvent } from 'react';
 
-import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import Link from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
-import Divider from "@material-ui/core/Divider";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import Lock from "@material-ui/icons/Lock";
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Link from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
+import Divider from '@material-ui/core/Divider';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import Lock from '@material-ui/icons/Lock';
 // import CircularProgress from "@material-ui/core/CircularProgress";
 
 // import axios from "axios";
 
-import LeftIconTextField from "./LeftIconTextField";
+import LeftIconTextField from './LeftIconTextField';
 
 const useStyles = makeStyles((theme) => ({
   loginModal: {
-    position: "absolute",
+    position: 'absolute',
     width: 400,
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
     padding: theme.spacing(4),
-    backgroundColor: "#e3f2fd",
+    backgroundColor: '#e3f2fd',
   },
   userName: {
-    marginTop: "2em",
-    marginBottom: "2em",
+    marginTop: '2em',
+    marginBottom: '2em',
   },
   createAccountBtn: {
-    backgroundColor: "#2196f3",
-    marginTop: "2em",
-    marginBottom: "2em",
+    backgroundColor: '#2196f3',
+    marginTop: '2em',
+    marginBottom: '2em',
   },
   password: {
-    marginBottom: "2em",
+    marginBottom: '2em',
   },
   loginModalBtn: {
-    marginTop: "2em",
-    marginBottom: "2em",
+    marginTop: '2em',
+    marginBottom: '2em',
   },
   divider: {
-    backgroundColor: "#000",
-    marginBottom: "2em",
+    backgroundColor: '#000',
+    marginBottom: '2em',
   },
   loadingSpinner: {
-    color: "#fff",
+    color: '#fff',
   },
 }));
 
 const Login: FC = () => {
-  const [userName, setUserName] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const [userName, setUserName] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
   const classes = useStyles();
 
@@ -79,11 +79,11 @@ const Login: FC = () => {
       <form autoComplete="off" onSubmit={loginHandler}>
         <LeftIconTextField
           MuiTextFieldProps={{
-            type: "text",
+            type: 'text',
             className: classes.userName,
             required: true,
-            name: "login-user",
-            autoComplete: "new-username",
+            name: 'login-user',
+            autoComplete: 'new-username',
             value: userName,
             onChange: (e: ChangeEvent<HTMLInputElement>) =>
               setUserName(e.target.value),
@@ -93,11 +93,11 @@ const Login: FC = () => {
         </LeftIconTextField>
         <LeftIconTextField
           MuiTextFieldProps={{
-            type: "password",
+            type: 'password',
             className: classes.password,
             required: true,
-            name: "login-pwd",
-            autoComplete: "new-password",
+            name: 'login-pwd',
+            autoComplete: 'new-password',
             value: password,
             onChange: (e: ChangeEvent<HTMLInputElement>) =>
               setPassword(e.target.value),

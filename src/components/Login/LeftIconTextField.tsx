@@ -1,27 +1,27 @@
-import React, { FC, FocusEvent, ChangeEvent } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-import Grid from "@material-ui/core/Grid";
-import clsx from "clsx";
+import React, { FC, FocusEvent, ChangeEvent } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+import clsx from 'clsx';
 
 const useStyles = makeStyles((theme) => ({
   textField: {
-    border: "2px solid lightgray",
-    borderRadius: "5px",
-    overflow: "hidden",
+    border: '2px solid lightgray',
+    borderRadius: '5px',
+    overflow: 'hidden',
   },
   iconHolder: {
-    display: "grid",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#2196f3",
-    color: "#fff",
-    "&:hover": {
-      backgroundColor: "##1e93f1",
+    display: 'grid',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#2196f3',
+    color: '#fff',
+    '&:hover': {
+      backgroundColor: '##1e93f1',
     },
   },
   inputField: {
-    backgroundColor: "#fff",
+    backgroundColor: '#fff',
     paddingLeft: 3,
   },
 }));
@@ -38,7 +38,7 @@ interface TextFieldProps {
   className?: any;
   required?: boolean;
   name?: string;
-  autoComplete?: "off" | "new-password" | "new-username";
+  autoComplete?: 'off' | 'new-password' | 'new-username';
   onFocus?: (e: FocusEvent<HTMLInputElement>) => any;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => any;
   value?: string;
