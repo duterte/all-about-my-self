@@ -1,6 +1,6 @@
-FROM node:ubuntu
+FROM node:14
 WORKDIR /container
-COPY package.json /container/package.json
+COPY package.json .
+COPY /build .
+EXPOSE 3000
 RUN npm install
-COPY . /container
-RUN npm start
